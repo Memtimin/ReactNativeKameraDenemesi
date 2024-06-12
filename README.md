@@ -68,6 +68,7 @@ ios için:
 
  test.js
  dosyasında:
+ # 
   import React, {PureComponent} from 'react';import {RNCamera} from 'react-native-camera';
 export default class test extends PureComponent {  constructor(props) {
   super(props);}
