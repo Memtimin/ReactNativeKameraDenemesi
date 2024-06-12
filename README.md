@@ -71,23 +71,24 @@ ios için:
 
 # 
       
-	  import React, {PureComponent} from 'react';import {RNCamera} from 'react-native-camera';
-	export default class test extends PureComponent {  constructor(props) {
-  	super(props);}
-	render() {
- 	 return (
-   	 <RNCamera 
-     	 ref={ref => {
+	  import React, {PureComponent} from 'react';
+   	  import {RNCamera} from 'react-native-camera';
+	  export default class test extends PureComponent {  constructor(props) {
+  	  super(props);}
+	  render() {
+ 	  return (
+   	  <RNCamera 
+     	  ref={ref => {
       	  this.camera = ref;
-     	 }}
-     	 captureAudio={false}
-     	 style={{flex: 1}}
-      	type={RNCamera.Constants.Type.back}
-      	androidCameraPermissionOptions={{
-       	 title: 'Kamera kullanmak için yetki ver',
-       	 message: 'Kameranızı kullanmak için izninize ihtiyacımız var',
-       	 buttonPositive: 'Tamam',
-       	 buttonNegative: 'İptal',
+     	  }}
+     	  captureAudio={false}
+     	  style={{flex: 1}}
+      	  type={RNCamera.Constants.Type.back}
+      	  androidCameraPermissionOptions={{
+       	  title: 'Kamera kullanmak için yetki ver',
+       	  message: 'Kameranızı kullanmak için izninize ihtiyacımız var',
+       	  buttonPositive: 'Tamam',
+       	  buttonNegative: 'İptal',
      	 }} />
    	 );
   	}} 
