@@ -72,7 +72,7 @@ ios için:
 # 
       
 	  import React, {PureComponent} from 'react';import {RNCamera} from 'react-native-camera';
-	export default class Camera extends PureComponent {  constructor(props) {
+	export default class test extends PureComponent {  constructor(props) {
   	super(props);}
 	render() {
  	 return (
