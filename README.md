@@ -4,7 +4,7 @@
    sonrakı aşamalar https://reactnative.dev/docs/set-up-your-environment da söylendiği adımlar takıp edilecek. android ve ios için ayrı ayrı https://reactnative.dev/docs/set-up-your-environment?os=macos&platform=android ve https://reactnative.dev/docs/set-up-your-environment?os=macos&platform=ios larda detayli anlatılmıştır. mac cıhazında hem android hem ios aynı anda debug modda çalışabildiği için bu 2 adımın tamamı yerine getirilmesi tavsiye edilir.
    android için: 
    #
-   		1. node kurulum.       brew install node@20
+      1. node kurulum.       brew install node@20
       2. watchman kurulumu.  brew install watchman
       3. JDK kurulumu.       brew install --cask zulu@17 
                             brew info --cask zulu@17  //yüklenmiş olan path i almak için.
