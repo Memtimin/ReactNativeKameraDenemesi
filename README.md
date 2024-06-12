@@ -37,7 +37,7 @@
 	  
 	  
 # React Native Camera Kütüphanesi Ekeleme
-   React native projesi için cemara işlemi ile alakeli bir çok kütüphene üretilmiştir. mesala react-native-vision-camera,react-native-pick-image,react-native-camera,...gibi. Biz react native camera denilen bir kütüphene üzerinde çalışacağız.
+   React native projesi için cemara işlemi ile alakeli bir çok kütüphene üretilmiştir. mesala react-native-vision-camera,react-native-pick-image,react-native-camera,react-native-camera-kit...gibi. Biz react native camera denilen bir kütüphene üzerinde çalışacağız.
     npm install --save react-native-vector-icon react-native-camera
     cd ios & pod install & cd ..
 
