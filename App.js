@@ -1,54 +1,74 @@
-import React, {PureComponent} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {RNCamera} from 'react-native-camera';
-export default class App extends PureComponent {  constructor(props) {
-  super(props);}
-render() {
-  return (
-    <>
-    <View style={styles.sectionTitle}>
-    <Text>Kamera Denemesi</Text>
-    </View>
-    <RNCamera
-      ref={ref => {
-        this.camera = ref;
-      } }
-      captureAudio={false}
-      style={{ flex: 1 }}
-      type={RNCamera.Constants.Type.back}
-      androidCameraPermissionOptions={{
-        title: 'Permission to use camera',
-        message: 'We need your permission to use your camera',
-        buttonPositive: 'Ok',
-        buttonNegative: 'Cancel',
-      }} /></>
-    );
-  }}
+import React, { Component } from 'react';
 
-//export default App;
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Linking
+} from 'react-native';
+
+import QRCodeScanner from 'react-native-qrcode-scanner';
+import { RNCamera } from 'react-native-camera';
+
+class App extends Component {
+  onSuccess = e => {
+    Linking.openURL(e.data).catch(err =>
+      {
+        const line=err.toString().split('/')
+        console.log("line:"+err.toString());
+        console.log(err.toString().split('/'));
+        console.error("barkod is :"+line[line.length-1]);
+
+        
+        
+      }
+      
+    );
+  };
+
+  render() {
+    return (
+      <QRCodeScanner
+        onRead={this.onSuccess}
+        flashMode={RNCamera.Constants.FlashMode.torch}
+        topContent={
+          <Text style={styles.centerText}>
+            Go to{' '}
+            <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
+            your computer and scan the QR code.
+          </Text>
+        }
+        bottomContent={
+          <TouchableOpacity style={styles.buttonTouchable}>
+            <Text style={styles.buttonText}>OK. Got it!</Text>
+          </TouchableOpacity>
+        }
+      />
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    marginTop: 32,
-    fontSize: 7,
-    fontWeight: '400',
-    flex:0,
-    alignItems:"center",
-    top:"50px",
-    Height:'30%',
-    fontStyle:'italic'
-  },
-  sectionDescription: {
-    marginTop: 8,
+  centerText: {
+    flex: 1,
     fontSize: 18,
-    fontWeight: '400',
+    padding: 32,
+    color: '#777'
   },
-  highlight: {
-    fontWeight: '700',
+  textBold: {
+    fontWeight: '500',
+    color: '#000'
   },
+  buttonText: {
+    fontSize: 21,
+    color: 'rgb(0,122,255)'
+  },
+  buttonTouchable: {
+    padding: 16
+  }
 });
+
+export default App;
+
 

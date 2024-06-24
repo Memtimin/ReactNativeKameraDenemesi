@@ -22,7 +22,8 @@ target 'SmartHome' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
-
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
   target 'SmartHomeTests' do
     inherit! :complete
     # Pods for testing
